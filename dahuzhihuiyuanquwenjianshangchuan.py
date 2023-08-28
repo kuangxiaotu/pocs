@@ -95,7 +95,7 @@ def check2(url):
             host_without_port = parsed_url.netloc.split(":")[0]
             #protocol = parsed_url.scheme  # 获取协议部分
             modified_url = "http" + "://" + host_without_port
-            r2 = requests.get(modified_url + ":8314" + "/upload/emap/society_new/" + path2, verify=False, allow_redirects=True,timeout=10,proxies=None)   # 上传文件路径的地方端口和原地址不同。原来是https,这个是http?
+            r2 = requests.get(modified_url + ":8314" + "/upload/emap/society_new/" + path2, verify=False, allow_redirects=True,timeout=10,proxies=None)   # 上传文件路径的地方端口和原地址不同。协议好像也不同，没咋看明白原来是https,这个是http?
             if r2.status_code==200 and 'test' in r2.text:
                 print('[+] /upload/emap/society_new/接口上传漏洞存在')
                 print('[+] 文件路径 ' + url + '/upload/emap/society_new/' + path2)
